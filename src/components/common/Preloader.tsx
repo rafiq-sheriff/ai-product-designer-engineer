@@ -110,11 +110,16 @@ export const Preloader: React.FC<PreloaderProps> = ({
       transition={{ duration: 0.95, ease: [0.76, 0, 0.24, 1] }}
       style={{
         position: 'fixed',
-        inset: 0,
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        width: '100vw',
+        height: '100dvh',
         zIndex: 999999,
         pointerEvents: isFadingOut ? 'none' : 'auto',
         userSelect: 'none',
-        overflow: 'visible',
+        overflow: 'hidden',
       }}
     >
       {/* Background SVG with Morphing Curved Bottom Edge */}
@@ -143,7 +148,7 @@ export const Preloader: React.FC<PreloaderProps> = ({
         style={{
           position: 'relative',
           width: '100%',
-          height: '100vh',
+          height: '100dvh',
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',

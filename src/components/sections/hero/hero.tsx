@@ -99,11 +99,15 @@ export const Hero: React.FC<HeroProps> = ({ preloaderComplete = true }) => {
 
         @media (max-width: 992px) {
           .hero-section {
-            padding: 9.5rem 1.25rem 0 1.25rem !important;
+            padding: 5.5rem 1.25rem 0 1.25rem !important;
             display: flex !important;
             flex-direction: column !important;
             justify-content: space-between !important;
-            min-height: 100vh !important;
+            height: 100dvh !important;
+            min-height: 100dvh !important;
+            max-height: 100dvh !important;
+            overflow: hidden !important;
+            box-sizing: border-box !important;
           }
           .hero-sidebar-left,
           .hero-sidebar-right {
@@ -113,10 +117,11 @@ export const Hero: React.FC<HeroProps> = ({ preloaderComplete = true }) => {
             flex-direction: column !important;
             align-items: center !important;
             text-align: center !important;
-            gap: 1.25rem !important;
+            gap: 0.75rem !important;
             order: 1 !important;
             z-index: 25 !important;
-            margin-top: 2.5rem !important;
+            margin-top: 0.5rem !important;
+            flex-shrink: 0 !important;
           }
           .hero-heading-block {
             align-items: center !important;
@@ -136,25 +141,30 @@ export const Hero: React.FC<HeroProps> = ({ preloaderComplete = true }) => {
             display: flex !important;
             align-items: flex-end !important;
             justify-content: center !important;
-            margin-top: 1rem !important;
+            margin-top: 0.5rem !important;
             z-index: 10 !important;
+            max-height: 48dvh !important;
+            overflow: hidden !important;
           }
           .hero-avatar-img {
-            height: 52vh !important;
-            max-height: 460px !important;
+            height: 44dvh !important;
+            max-height: 340px !important;
+            width: auto !important;
+            object-fit: contain !important;
           }
         }
 
         @media (max-width: 576px) {
           .hero-section {
-            padding: 8.5rem 1rem 0 1rem !important;
+            padding: 5.25rem 1rem 0 1rem !important;
           }
           .hero-text-container {
-            margin-top: 2rem !important;
+            margin-top: 0.25rem !important;
+            gap: 0.5rem !important;
           }
           .hero-avatar-img {
-            height: 50vh !important;
-            max-height: 420px !important;
+            height: 42dvh !important;
+            max-height: 310px !important;
           }
         }
       `}</style>
