@@ -20,6 +20,10 @@ export const Showcase: React.FC<ShowcaseProps> = ({ onNavigateToProjects }) => {
     }
   };
 
+  const openProjectLink = (url: string) => {
+    window.open(url, '_blank', 'noopener,noreferrer');
+  };
+
   return (
     <section
       id="showcase"
@@ -171,7 +175,6 @@ export const Showcase: React.FC<ShowcaseProps> = ({ onNavigateToProjects }) => {
               gap: '0.5rem',
             }}
           >
-            
             <h2
               style={{
                 fontFamily: "'Acorn', 'Suisse Intl', 'Inter', sans-serif",
@@ -190,7 +193,7 @@ export const Showcase: React.FC<ShowcaseProps> = ({ onNavigateToProjects }) => {
 
         {/* BENTO GRID CONTAINER */}
         <div className="showcase-grid">
-          {/* CARD 1: SherifIQ Platform */}
+          {/* CARD 1: Sherifiq */}
           <motion.div
             className="showcase-card-1"
             initial={{ opacity: 0, y: 20 }}
@@ -199,7 +202,7 @@ export const Showcase: React.FC<ShowcaseProps> = ({ onNavigateToProjects }) => {
             transition={{ duration: 0.5 }}
             onMouseEnter={() => setHoveredCard('card-1')}
             onMouseLeave={() => setHoveredCard(null)}
-            onClick={handleCardClick}
+            onClick={() => openProjectLink('https://www.sherifiq.in')}
             style={{
               borderRadius: '24px',
               position: 'relative',
@@ -216,7 +219,7 @@ export const Showcase: React.FC<ShowcaseProps> = ({ onNavigateToProjects }) => {
           >
             <img
               src="/assets/image/projects/sherifiq.webp"
-              alt="SherifIQ AI"
+              alt="Sherifiq IT Services"
               style={{
                 position: 'absolute',
                 inset: 0,
@@ -265,7 +268,7 @@ export const Showcase: React.FC<ShowcaseProps> = ({ onNavigateToProjects }) => {
                     textShadow: '0 2px 10px rgba(0,0,0,0.6)',
                   }}
                 >
-                  SherifIQ Platform
+                  Sherifiq
                 </h3>
                 <p
                   style={{
@@ -276,7 +279,7 @@ export const Showcase: React.FC<ShowcaseProps> = ({ onNavigateToProjects }) => {
                     textShadow: '0 1px 6px rgba(0,0,0,0.6)',
                   }}
                 >
-                  Intelligent Agent Workflow System
+                  IT Services Website
                 </p>
               </div>
               <div
@@ -302,7 +305,7 @@ export const Showcase: React.FC<ShowcaseProps> = ({ onNavigateToProjects }) => {
             </div>
           </motion.div>
 
-          {/* CARD 2: Portfolio Showcase */}
+          {/* CARD 2: Punniyakotti Portfolio */}
           <motion.div
             className="showcase-card-2"
             initial={{ opacity: 0, y: 20 }}
@@ -311,7 +314,7 @@ export const Showcase: React.FC<ShowcaseProps> = ({ onNavigateToProjects }) => {
             transition={{ duration: 0.5, delay: 0.1 }}
             onMouseEnter={() => setHoveredCard('card-2')}
             onMouseLeave={() => setHoveredCard(null)}
-            onClick={handleCardClick}
+            onClick={() => openProjectLink('https://punniyakotti-portfolio.vercel.app')}
             style={{
               borderRadius: '24px',
               position: 'relative',
@@ -328,7 +331,7 @@ export const Showcase: React.FC<ShowcaseProps> = ({ onNavigateToProjects }) => {
           >
             <img
               src="/assets/image/projects/punniyakotti-portfolio.webp"
-              alt="Creative Portfolio"
+              alt="Punniyakotti Portfolio"
               style={{
                 position: 'absolute',
                 inset: 0,
@@ -377,7 +380,7 @@ export const Showcase: React.FC<ShowcaseProps> = ({ onNavigateToProjects }) => {
                     textShadow: '0 2px 10px rgba(0,0,0,0.6)',
                   }}
                 >
-                  Portfolio Showcase
+                  Punniyakotti Portfolio
                 </h3>
                 <p
                   style={{
@@ -388,7 +391,7 @@ export const Showcase: React.FC<ShowcaseProps> = ({ onNavigateToProjects }) => {
                     textShadow: '0 1px 6px rgba(0,0,0,0.6)',
                   }}
                 >
-                  Fluid Motion & Custom 3D WebGL Experiences
+                  Photography Portfolio
                 </p>
               </div>
               <div
@@ -414,7 +417,7 @@ export const Showcase: React.FC<ShowcaseProps> = ({ onNavigateToProjects }) => {
             </div>
           </motion.div>
 
-          {/* CARD 3: Lumière Brand System */}
+          {/* CARD 3: Lumière */}
           <motion.div
             className="showcase-card-3"
             initial={{ opacity: 0, y: 20 }}
@@ -423,7 +426,7 @@ export const Showcase: React.FC<ShowcaseProps> = ({ onNavigateToProjects }) => {
             transition={{ duration: 0.5, delay: 0.2 }}
             onMouseEnter={() => setHoveredCard('card-3')}
             onMouseLeave={() => setHoveredCard(null)}
-            onClick={handleCardClick}
+            onClick={() => openProjectLink('https://lumiere-sherifiq.vercel.app')}
             style={{
               borderRadius: '24px',
               position: 'relative',
@@ -440,7 +443,7 @@ export const Showcase: React.FC<ShowcaseProps> = ({ onNavigateToProjects }) => {
           >
             <img
               src="/assets/image/projects/lumiere.webp"
-              alt="Lumière System"
+              alt="Lumière Website"
               style={{
                 position: 'absolute',
                 inset: 0,
@@ -489,7 +492,7 @@ export const Showcase: React.FC<ShowcaseProps> = ({ onNavigateToProjects }) => {
                     textShadow: '0 2px 10px rgba(0,0,0,0.6)',
                   }}
                 >
-                  Lumière Brand System
+                  Lumière
                 </h3>
                 <p
                   style={{
@@ -500,7 +503,7 @@ export const Showcase: React.FC<ShowcaseProps> = ({ onNavigateToProjects }) => {
                     textShadow: '0 1px 6px rgba(0,0,0,0.6)',
                   }}
                 >
-                  Modular Design Token Architecture
+                  Cosmetic Brand Website
                 </p>
               </div>
               <div
@@ -526,7 +529,7 @@ export const Showcase: React.FC<ShowcaseProps> = ({ onNavigateToProjects }) => {
             </div>
           </motion.div>
 
-          {/* CARD 4: Helix Studio */}
+          {/* CARD 4: Helix AI */}
           <motion.div
             className="showcase-card-4"
             initial={{ opacity: 0, y: 20 }}
@@ -535,7 +538,7 @@ export const Showcase: React.FC<ShowcaseProps> = ({ onNavigateToProjects }) => {
             transition={{ duration: 0.5, delay: 0.3 }}
             onMouseEnter={() => setHoveredCard('card-4')}
             onMouseLeave={() => setHoveredCard(null)}
-            onClick={handleCardClick}
+            onClick={() => openProjectLink('https://helix-ai.ascodelabs.com')}
             style={{
               borderRadius: '24px',
               position: 'relative',
@@ -552,7 +555,7 @@ export const Showcase: React.FC<ShowcaseProps> = ({ onNavigateToProjects }) => {
           >
             <img
               src="/assets/image/projects/helix.webp"
-              alt="Helix Logo"
+              alt="Helix AI"
               style={{
                 position: 'absolute',
                 inset: 0,
@@ -602,7 +605,7 @@ export const Showcase: React.FC<ShowcaseProps> = ({ onNavigateToProjects }) => {
                     textShadow: '0 2px 10px rgba(0,0,0,0.6)',
                   }}
                 >
-                  Helix Studio
+                  Helix AI
                 </h3>
                 <p
                   style={{
@@ -613,7 +616,7 @@ export const Showcase: React.FC<ShowcaseProps> = ({ onNavigateToProjects }) => {
                     textShadow: '0 1px 6px rgba(0,0,0,0.6)',
                   }}
                 >
-                  Brand Identity & SaaS
+                  AI Web Platform
                 </p>
               </div>
               <div
@@ -639,7 +642,7 @@ export const Showcase: React.FC<ShowcaseProps> = ({ onNavigateToProjects }) => {
             </div>
           </motion.div>
 
-          {/* CARD 5: HabitTrace App */}
+          {/* CARD 5: HabitTrace */}
           <motion.div
             className="showcase-card-5"
             initial={{ opacity: 0, y: 20 }}
@@ -648,7 +651,7 @@ export const Showcase: React.FC<ShowcaseProps> = ({ onNavigateToProjects }) => {
             transition={{ duration: 0.5, delay: 0.4 }}
             onMouseEnter={() => setHoveredCard('card-5')}
             onMouseLeave={() => setHoveredCard(null)}
-            onClick={handleCardClick}
+            onClick={() => openProjectLink('https://habit-trace.vercel.app')}
             style={{
               borderRadius: '24px',
               position: 'relative',
@@ -665,7 +668,7 @@ export const Showcase: React.FC<ShowcaseProps> = ({ onNavigateToProjects }) => {
           >
             <img
               src="/assets/image/projects/habit-trace.webp"
-              alt="HabitTrace Analytics"
+              alt="HabitTrace"
               style={{
                 position: 'absolute',
                 inset: 0,
@@ -714,7 +717,7 @@ export const Showcase: React.FC<ShowcaseProps> = ({ onNavigateToProjects }) => {
                     textShadow: '0 2px 10px rgba(0,0,0,0.6)',
                   }}
                 >
-                  HabitTrace App
+                  HabitTrace
                 </h3>
                 <p
                   style={{
@@ -725,7 +728,7 @@ export const Showcase: React.FC<ShowcaseProps> = ({ onNavigateToProjects }) => {
                     textShadow: '0 1px 6px rgba(0,0,0,0.6)',
                   }}
                 >
-                  Behavioral Analytics Platform
+                  Health Tracking App
                 </p>
               </div>
               <div
