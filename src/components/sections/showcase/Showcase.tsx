@@ -79,6 +79,17 @@ export const Showcase: React.FC<ShowcaseProps> = ({ onNavigateToProjects }) => {
             width: 100% !important;
             height: 320px !important;
           }
+          .showcase-grid img[aria-hidden="true"] {
+            opacity: 0 !important;
+            display: none !important;
+          }
+        }
+
+        @media (hover: none) {
+          .showcase-grid img[aria-hidden="true"] {
+            opacity: 0 !important;
+            display: none !important;
+          }
         }
 
         @media (max-width: 480px) {

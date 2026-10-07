@@ -43,9 +43,9 @@ export const About: React.FC = () => {
     offset: ['start end', 'end start'],
   });
 
-  // Smooth horizontal translation to the right on scroll (contained on mobile)
-  const xShiftDesktop = useTransform(scrollYProgress, [0.1, 0.6], [0, 260]);
-  const xShiftMobile = useTransform(scrollYProgress, [0.1, 0.6], [0, 35]);
+  // Smooth horizontal translation to the right on scroll (responsive for mobile & desktop)
+  const xShiftDesktop = useTransform(scrollYProgress, [0.1, 0.6], [0, 240]);
+  const xShiftMobile = useTransform(scrollYProgress, [0.1, 0.6], [0, 16]);
   const xShift = isMobile ? xShiftMobile : xShiftDesktop;
 
   // Self-drawing scribble effect on scroll
@@ -69,7 +69,27 @@ export const About: React.FC = () => {
       <style>{`
         @media (max-width: 992px) {
           .about-section {
-            padding: 4rem 1.25rem 5rem 1.25rem !important;
+            padding: 5.5rem 1.25rem 4rem 1.25rem !important;
+          }
+          .about-bg-scribble-svg {
+            left: auto !important;
+            right: -15px !important;
+            top: 15px !important;
+            width: 140px !important;
+            height: 300px !important;
+            opacity: 0.75 !important;
+          }
+          .about-bg-scribble-sparkle {
+            top: 25px !important;
+            right: 4% !important;
+            width: 36px !important;
+            height: 36px !important;
+          }
+          .about-bg-scribble-swirl {
+            bottom: 20px !important;
+            right: -25px !important;
+            width: 140px !important;
+            height: 100px !important;
           }
           .about-grid {
             grid-template-columns: 1fr !important;
@@ -93,6 +113,7 @@ export const About: React.FC = () => {
 
       {/* SEPARATE BACKGROUND SELF-DRAWING SCRIBBLE SVG (#62613F) */}
       <svg
+        className="about-bg-scribble-svg"
         width="340"
         height="580"
         viewBox="0 0 340 580"
@@ -118,23 +139,27 @@ export const About: React.FC = () => {
       </svg>
 
       {/* ADDITIONAL CREATIVE SCRIBBLE ACCENTS IN ABOUT SECTION */}
-      <ScribbleDecoration
-        type="sparkle"
-        width={70}
-        height={70}
-        color="#62613F"
-        opacity={0.7}
-        style={{ top: '80px', right: '12%', transform: 'rotate(15deg)' }}
-      />
-      <ScribbleDecoration
-        type="loop-swirl"
-        width={260}
-        height={180}
-        color="#62613F"
-        strokeWidth={18}
-        opacity={0.45}
-        style={{ bottom: '40px', right: '-30px', transform: 'rotate(-10deg)' }}
-      />
+      <div className="about-bg-scribble-sparkle">
+        <ScribbleDecoration
+          type="sparkle"
+          width={70}
+          height={70}
+          color="#62613F"
+          opacity={0.7}
+          style={{ top: '80px', right: '12%', transform: 'rotate(15deg)' }}
+        />
+      </div>
+      <div className="about-bg-scribble-swirl">
+        <ScribbleDecoration
+          type="loop-swirl"
+          width={260}
+          height={180}
+          color="#62613F"
+          strokeWidth={18}
+          opacity={0.45}
+          style={{ bottom: '40px', right: '-30px', transform: 'rotate(-10deg)' }}
+        />
+      </div>
 
       <div
         style={{
