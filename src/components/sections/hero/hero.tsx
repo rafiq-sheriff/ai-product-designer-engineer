@@ -99,7 +99,7 @@ export const Hero: React.FC<HeroProps> = ({ preloaderComplete = true }) => {
 
         @media (max-width: 992px) {
           .hero-section {
-            padding: 5.5rem 1.25rem 0 1.25rem !important;
+            padding: 6rem 1.25rem 0 1.25rem !important;
             display: flex !important;
             flex-direction: column !important;
             justify-content: space-between !important;
@@ -117,10 +117,10 @@ export const Hero: React.FC<HeroProps> = ({ preloaderComplete = true }) => {
             flex-direction: column !important;
             align-items: center !important;
             text-align: center !important;
-            gap: 0.75rem !important;
+            gap: 0.6rem !important;
             order: 1 !important;
             z-index: 25 !important;
-            margin-top: 0.5rem !important;
+            margin-top: 1rem !important;
             flex-shrink: 0 !important;
           }
           .hero-heading-block {
@@ -143,12 +143,12 @@ export const Hero: React.FC<HeroProps> = ({ preloaderComplete = true }) => {
             justify-content: center !important;
             margin-top: 0.5rem !important;
             z-index: 10 !important;
-            max-height: 48dvh !important;
+            max-height: 62dvh !important;
             overflow: hidden !important;
           }
           .hero-avatar-img {
-            height: 44dvh !important;
-            max-height: 340px !important;
+            height: 56dvh !important;
+            max-height: 460px !important;
             width: auto !important;
             object-fit: contain !important;
           }
@@ -156,15 +156,15 @@ export const Hero: React.FC<HeroProps> = ({ preloaderComplete = true }) => {
 
         @media (max-width: 576px) {
           .hero-section {
-            padding: 5.25rem 1rem 0 1rem !important;
+            padding: 5.75rem 1rem 0 1rem !important;
           }
           .hero-text-container {
-            margin-top: 0.25rem !important;
+            margin-top: 0.85rem !important;
             gap: 0.5rem !important;
           }
           .hero-avatar-img {
-            height: 42dvh !important;
-            max-height: 310px !important;
+            height: 54dvh !important;
+            max-height: 460px !important;
           }
         }
       `}</style>

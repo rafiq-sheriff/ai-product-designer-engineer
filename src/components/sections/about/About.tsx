@@ -45,7 +45,7 @@ export const About: React.FC = () => {
 
   // Smooth horizontal translation to the right on scroll (responsive for mobile & desktop)
   const xShiftDesktop = useTransform(scrollYProgress, [0.1, 0.6], [0, 240]);
-  const xShiftMobile = useTransform(scrollYProgress, [0.1, 0.6], [0, 16]);
+  const xShiftMobile = useTransform(scrollYProgress, [0.1, 0.6], [0, 14]);
   const xShift = isMobile ? xShiftMobile : xShiftDesktop;
 
   // Self-drawing scribble effect on scroll
@@ -69,34 +69,41 @@ export const About: React.FC = () => {
       <style>{`
         @media (max-width: 992px) {
           .about-section {
-            padding: 5.5rem 1.25rem 4rem 1.25rem !important;
+            padding: 0 1.25rem 4rem 1.25rem !important;
           }
           .about-bg-scribble-svg {
             left: auto !important;
-            right: -15px !important;
-            top: 15px !important;
-            width: 140px !important;
-            height: 300px !important;
-            opacity: 0.75 !important;
+            right: -20px !important;
+            top: -20px !important;
+            width: 120px !important;
+            height: 250px !important;
+            opacity: 0.45 !important;
           }
           .about-bg-scribble-sparkle {
-            top: 25px !important;
-            right: 4% !important;
-            width: 36px !important;
-            height: 36px !important;
+            display: none !important;
           }
           .about-bg-scribble-swirl {
-            bottom: 20px !important;
-            right: -25px !important;
-            width: 140px !important;
-            height: 100px !important;
+            bottom: 10px !important;
+            right: -30px !important;
+            width: 120px !important;
+            height: 90px !important;
+            opacity: 0.35 !important;
           }
           .about-grid {
             grid-template-columns: 1fr !important;
-            gap: 2.25rem !important;
+            gap: 1.75rem !important;
             width: 100% !important;
           }
-          .about-img-col, .about-text-col {
+          .about-img-col {
+            grid-column: span 12 !important;
+            width: 100% !important;
+            max-width: 100% !important;
+            aspect-ratio: 4 / 4.4 !important;
+            height: auto !important;
+            max-height: 480px !important;
+            box-sizing: border-box !important;
+          }
+          .about-text-col {
             grid-column: span 12 !important;
             width: 100% !important;
             max-width: 100% !important;
@@ -106,7 +113,7 @@ export const About: React.FC = () => {
         @media (max-width: 640px) {
           .expertise-grid {
             grid-template-columns: 1fr !important;
-            gap: 1.75rem !important;
+            gap: 1.5rem !important;
           }
         }
       `}</style>
@@ -167,7 +174,7 @@ export const About: React.FC = () => {
           margin: '0 auto',
           display: 'flex',
           flexDirection: 'column',
-          gap: '2.5rem',
+          gap: '2rem',
           position: 'relative',
           zIndex: 1,
           width: '100%',
@@ -180,15 +187,15 @@ export const About: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          style={{ width: '100%', overflow: 'hidden' }}
+          style={{ width: '100%', overflow: 'visible' }}
         >
           <h2
             style={{
               fontFamily: "'Acorn', 'Suisse Intl', 'Inter', sans-serif",
-              fontSize: 'clamp(2.2rem, 7vw, 6.5rem)',
+              fontSize: 'clamp(2rem, 7vw, 6.5rem)',
               fontWeight: 800,
               letterSpacing: '-0.04em',
-              lineHeight: 1.02,
+              lineHeight: 1.04,
               color: '#0a0a0a',
               margin: 0,
               display: 'flex',
@@ -207,11 +214,23 @@ export const About: React.FC = () => {
             </motion.span>
             <span
               style={{
-                display: 'block',
-                whiteSpace: isMobile ? 'normal' : 'nowrap',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.4rem',
+                flexWrap: 'wrap',
               }}
             >
-              Product Systems
+              <span>Product Systems</span>
+              <span style={{ display: 'inline-flex', alignItems: 'center' }}>
+                <ScribbleDecoration
+                  type="sparkle"
+                  width={isMobile ? 36 : 64}
+                  height={isMobile ? 36 : 64}
+                  color="#62613F"
+                  opacity={0.8}
+                  animatedOnScroll={false}
+                />
+              </span>
             </span>
           </h2>
         </motion.div>
